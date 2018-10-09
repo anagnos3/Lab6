@@ -1,7 +1,7 @@
 /**
  * Our specialty WaterPokemon that inherits from our Pokemon class.
  */
-public class WaterPokemon extends Pokemon {
+public class WaterPokemon extends SpecPokemon {
 
     /**
      * The value we will be setting our specialty probability to.
@@ -61,7 +61,7 @@ public class WaterPokemon extends Pokemon {
      * Implement this.
      */
     public boolean attack(final Pokemon opponent) {
-        return false;
+        return this.specAttack(opponent);
     }
 
 

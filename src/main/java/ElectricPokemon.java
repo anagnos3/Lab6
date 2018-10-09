@@ -1,7 +1,7 @@
 /**
  * Our specialty ElectricPokemon that inherits from our Pokemon class.
  */
-public class ElectricPokemon extends Pokemon {
+public class ElectricPokemon extends SpecPokemon {
     /**
      * The value we will be setting our specialty probability to.
      */
@@ -59,7 +59,7 @@ public class ElectricPokemon extends Pokemon {
      * Implement this.
      */
     public boolean attack(final Pokemon opponent) {
-        return false;
+        return this.specAttack(opponent);
     }
 
 }

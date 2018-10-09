@@ -1,7 +1,7 @@
 /**
  * Our specialty FirePokemon that inherits from our Pokemon class.
  */
-public class FirePokemon extends Pokemon {
+public class FirePokemon extends SpecPokemon {
     /**
      * The value we will be setting our specialty probability to.
      */
@@ -58,7 +58,7 @@ public class FirePokemon extends Pokemon {
      * Implement this.
      */
     public boolean attack(final Pokemon opponent) {
-        return false;
+        return this.specAttack(opponent);
     }
 
 }

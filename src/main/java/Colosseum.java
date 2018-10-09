@@ -102,7 +102,42 @@ public class Colosseum {
      * (Look, we can return objects too!)
      */
     public static Pokemon buildPokemon() {
-        Pokemon returnPokemon = null;
+
+        boolean isValid = false;
+        int typeChoice = 0;
+        String name = "";
+        int hitPoints = 0;
+        int attackLevel = 0;
+        int defenseLevel = 0;
+
+        while (typeChoice < 1 || typeChoice > 3) {
+            System.out.println("Select from the following Pokemon types:\n" +
+                    "1 - Electric Pokemon <br>\n" +
+                    "2 - Fire Pokemon <br>\n" +
+                    "3 - Water Pokemon");
+            typeChoice = myScan.nextInt();
+            if (typeChoice < 1 || typeChoice > 3) {
+                System.out.println("ERROR");
+            }
+        }
+        System.out.println("Please name your Pokemon:");
+        while (hitPoints < 1 && hitPoints > MAX_HIT_POINTS) {
+            System.out.println("How many hit points will it have? (1-50): ");
+            hitPoints = myScan.nextInt();
+            if (hitPoints < 1 && hitPoints > MAX_HIT_POINTS) {
+                System.out.println("ERROR");
+            }
+        }
+        System.out.println("Split fifty points between attack level and defense level\nEnter your attack level (1-49): ");
+        attackLevel = myScan.nextInt();
+        System.out.println("Enter your defense level (1-3): ");
+        defenseLevel = myScan.nextInt();
+
+        Pokemon returnPokemon = new Pokemon();
+        returnPokemon.setHitPoints(hitPoints);
+        returnPokemon.setAttackLevel(attackLevel);
+        returnPokemon.setDefenseLevel(defenseLevel);
+        returnPokemon.setName(name);
         return returnPokemon;
     }
 
